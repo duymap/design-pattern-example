@@ -8,16 +8,17 @@ package dchung.designpattern.builderpattern.notbestpractice;
  * Explaination: Assume that initially we created BankAccount object with 5 params , however the new request might come, and require us to add more 
  * params in the near-future. That is ok but require developers need to create multiple constructors to deal with. OR you have to desing only one 
  * constructor with all neccessary params and depend on particulate case, we have to pass null value for un-use parameter, that's really ugly code.
+ * Please see dchung.designpattern.builderpattern.notbestpratice.Main.java to see why we should avoid this.
  */
 public class BankAccount {
 
-	private long accountNumber;
+	private String accountNumber;
 	private String owner;
 	private String branch;
-	private double balance;
-	private double interestRate;
+	private Double balance;
+	private Double interestRate;
 
-	public BankAccount(long accountNumber, String owner, String branch, double balance, double interestRate) {
+	public BankAccount(String accountNumber, String owner, String branch, Double balance, Double interestRate) {
 		this.accountNumber = accountNumber;
 		this.owner = owner;
 		this.branch = branch;
@@ -25,13 +26,15 @@ public class BankAccount {
 		this.interestRate = interestRate;
 	}
 
-	public long getAccountNumber() {
+	public String getAccountNumber() {
 		return accountNumber;
 	}
 
-	public void setAccountNumber(long accountNumber) {
+	public void setAccountNumber(String accountNumber) {
 		this.accountNumber = accountNumber;
 	}
+
+
 
 	public String getOwner() {
 		return owner;
@@ -49,20 +52,20 @@ public class BankAccount {
 		this.branch = branch;
 	}
 
-	public double getBalance() {
+	public Double getBalance() {
 		return balance;
 	}
 
-	public void setBalance(double balance) {
+	public void setBalance(Double balance) {
 		this.balance = balance;
 	}
 
-	public double getInterestRate() {
+	public Double getInterestRate() {
 		return interestRate;
 	}
 
-	public void setInterestRate(double interestRate) {
+	public void setInterestRate(Double interestRate) {
 		this.interestRate = interestRate;
 	}
-	
+
 }
